@@ -1,5 +1,4 @@
-﻿
-// See https://aka.ms/new-console-template for more information
+﻿//Calculator body
 Console.WriteLine("Input the first number");
 int firstNum = Convert.ToInt32(Console.ReadLine());
 
@@ -9,8 +8,11 @@ int secondNum = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("What operation would you like to carry out? add, subtract, multiply, divide");
 string mathOp = Console.ReadLine();
 
+//Initialize answer variable
 int ans;
+//Import calculator function
 Calc calcEngine = new Calc();
+
 if (mathOp == "add")
 {
     ans = calcEngine.Add(firstNum, secondNum);
@@ -18,7 +20,7 @@ if (mathOp == "add")
 }
 else if (mathOp == "subtract")
 {
-    ans = calcEngine.Subtraction(firstNum, secondNum);
+    ans = calcEngine.Subtract(firstNum, secondNum);
     Console.WriteLine($"The answer is {ans}");
 }
 else if (mathOp == "multiply")
@@ -35,5 +37,3 @@ else
 {
     Console.WriteLine("Wrong mathematical operation!!!");
 }
-
-// int sum = firstNum + secondNum;

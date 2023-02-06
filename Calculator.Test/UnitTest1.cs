@@ -15,7 +15,7 @@ public class UnitTest1
     {
         Calc engine = new Calc();
 
-        Assert.Equal(12, engine.Subtraction(16,4));
+        Assert.Equal(12, engine.Subtract(16,4));
     }
     
      [Fact]
