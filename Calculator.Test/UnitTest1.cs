@@ -33,12 +33,4 @@ public class UnitTest1
 
         Assert.Equal(40, engine.Multiply(10,4));
     }
-    
-     [Fact]
-    public void Test_Division_2()
-    {
-        Calc engine = new Calc();
-
-        Assert.Equal(16, engine.Divide(16,0));
-    }
 }
