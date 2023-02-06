@@ -39,6 +39,6 @@ public class UnitTest1
     {
         Calc engine = new Calc();
 
-        Assert.Equal(16, engine.Subtraction(16,0));
+        Assert.Equal(16, engine.Divide(16,0));
     }
 }
