@@ -23,12 +23,12 @@ else if (mathOp == "subtract")
 }
 else if (mathOp == "multiply")
 {
-    ans = firstNum * secondNum;
+    ans = calcEngine.Multiply(firstNum, secondNum);
     Console.WriteLine($"The answer is {ans}");
 }
 else if (mathOp == "divide")
 {
-    ans = firstNum / secondNum;
+    ans = calcEngine.Divide(firstNum, secondNum);
     Console.WriteLine($"The answer is {ans}");
 }
 else
