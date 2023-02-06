@@ -17,4 +17,28 @@ public class UnitTest1
 
         Assert.Equal(12, engine.Subtraction(16,4));
     }
+    
+     [Fact]
+    public void Test_Division()
+    {
+        Calc engine = new Calc();
+
+        Assert.Equal(4, engine.Divide(16,4));
+    }
+    
+     [Fact]
+    public void Test_Multiplication()
+    {
+        Calc engine = new Calc();
+
+        Assert.Equal(40, engine.Multiply(10,4));
+    }
+    
+     [Fact]
+    public void Test_Division_2()
+    {
+        Calc engine = new Calc();
+
+        Assert.Equal(16, engine.Subtraction(16,0));
+    }
 }
