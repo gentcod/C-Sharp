@@ -1,39 +1,47 @@
-﻿//Calculator body
-Console.WriteLine("Input the first number");
-int firstNum = Convert.ToInt32(Console.ReadLine());
+﻿namespace ConsoleCalculator
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Calc calcEngine = new Calc();
 
-Console.WriteLine("Input the second number");
-int secondNum = Convert.ToInt32(Console.ReadLine());
+            //Calculator body
+            Console.WriteLine("Input the first number");
+            calcEngine.firstOperand = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("What operation would you like to carry out? add, subtract, multiply, divide");
-string mathOp = Console.ReadLine();
+            Console.WriteLine("Input the second number");
+            calcEngine.secondOperand = Convert.ToInt32(Console.ReadLine());
 
-//Initialize answer variable
-int ans;
-//Import calculator function
-Calc calcEngine = new Calc();
+            Console.WriteLine("What operation would you like to carry out? add, subtract, multiply, divide");
+            //Initialize answer variable
+            int ans = 0;
+            calcEngine.mathOperation = Console.ReadLine().ToString();
 
-if (mathOp == "add")
-{
-    ans = calcEngine.Add(firstNum, secondNum);
-    Console.WriteLine($"The answer is {ans}");
-}
-else if (mathOp == "subtract")
-{
-    ans = calcEngine.Subtract(firstNum, secondNum);
-    Console.WriteLine($"The answer is {ans}");
-}
-else if (mathOp == "multiply")
-{
-    ans = calcEngine.Multiply(firstNum, secondNum);
-    Console.WriteLine($"The answer is {ans}");
-}
-else if (mathOp == "divide")
-{
-    ans = calcEngine.Divide(firstNum, secondNum);
-    Console.WriteLine($"The answer is {ans}");
-}
-else
-{
-    Console.WriteLine("Wrong mathematical operation!!!");
+            if (calcEngine.mathOperation == "add")
+            {
+                ans = calcEngine.Add(calcEngine.firstOperand, calcEngine.secondOperand);
+                Console.WriteLine($"The answer is {ans}");
+            }
+            else if (calcEngine.mathOperation == "subtract")
+            {
+                ans = calcEngine.Subtract(calcEngine.firstOperand, calcEngine.secondOperand);
+                Console.WriteLine($"The answer is {ans}");
+            }
+            else if (calcEngine.mathOperation == "multiply")
+            {
+                ans = calcEngine.Multiply(calcEngine.firstOperand, calcEngine.secondOperand);
+                Console.WriteLine($"The answer is {ans}");
+            }
+            else if (calcEngine.mathOperation == "divide")
+            {
+                ans = calcEngine.Divide(calcEngine.firstOperand, calcEngine.secondOperand);
+                Console.WriteLine($"The answer is {ans}");
+            }
+            else
+            {
+                Console.WriteLine("Wrong mathematical operation!!!");
+            }
+        }
+    }
 }
