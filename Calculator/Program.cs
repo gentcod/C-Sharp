@@ -14,9 +14,10 @@
          int secondNum = Convert.ToInt32(Console.ReadLine());
 
          Console.WriteLine("What operation would you like to carry out? add, subtract, multiply, divide");
-         string operation = Console.ReadLine().ToString();
+         string? operation = Console.ReadLine();
 
-         calcEngine.Calculate(firstNum, secondNum, operation);
+         if (operation != null) 
+            calcEngine.Calculate(firstNum, secondNum, operation);
       }
    }
 }

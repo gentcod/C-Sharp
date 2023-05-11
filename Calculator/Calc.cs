@@ -1,75 +1,69 @@
-//Create calculate function that can be called by every file
-namespace ConsoleCalculator
+namespace ConsoleCalculator;
+
+public class Calc
 {
-    public class Calc
+    public int firstOperand;
+    public int secondOperand;
+    private readonly List<string> _mathOperation = new List<string> { "add", "subtract", "divide", "multiply" };
+
+    //public Calc(int firstNum, int secondNum, string mathOp) 
+    public Calc() {}
+
+    public int Add(int operand1, int operand2)
     {
-        public int firstOperand;
-        public int secondOperand;
-        public string mathOperation;
+        return operand1 + operand2;
+    }
 
-        //public Calc(int firstNum, int secondNum, string mathOp) 
-        public Calc()
+    public int Subtract(int operand1, int operand2)
+    {
+        return operand1 - operand2;
+    }
+
+    public int Multiply(int operand1, int operand2)
+    {
+        return operand1 * operand2;
+    }
+
+    public int Divide(int operand1, int operand2)
+    {
+        return operand1 / operand2;
+    }
+
+    public void Calculate(int operand1, int operand2, string operation)
+    {
+        firstOperand = operand1;
+        secondOperand = operand2;
+
+        //Initialize answer variable
+        int ans = 0;
+
+        if (operation != null)
         {
-            
-        }
+            string opr = operation.ToLower();
 
-        public int Add(int operand1, int operand2)
-        {
-            return operand1 + operand2;
-        }
-
-        public int Subtract(int operand1, int operand2)
-        {
-            return operand1 - operand2;
-        }
-
-        public int Multiply(int operand1, int operand2)
-        {
-            return operand1 * operand2;
-        }
-
-        public int Divide(int operand1, int operand2)
-        {
-            return operand1 / operand2;
-        }
-
-        public void Calculate(int operand1, int operand2, string operation)
-        {
-            firstOperand = operand1;
-            secondOperand = operand2;
-            mathOperation = operation;
-
-            //Initialize answer variable
-            int ans = 0;
-
-            if (mathOperation != null)
+            if (_mathOperation.Contains(opr))
             {
-                if (mathOperation == "add")
-                {
+                if (opr == "add")
                     ans = Add(firstOperand, secondOperand);
-                    Console.WriteLine($"The answer is {ans}");
-                }
-                else if (mathOperation == "subtract")
-                {
+
+                if (opr == "subtract")
                     ans = Subtract(firstOperand, secondOperand);
-                    Console.WriteLine($"The answer is {ans}");
-                }
-                else if (mathOperation == "multiply")
-                {
+
+                if (opr == "multiply")
                     ans = Multiply(firstOperand, secondOperand);
-                    Console.WriteLine($"The answer is {ans}");
-                }
-                else if (mathOperation == "divide")
-                {
+
+                if (opr == "divide")
                     ans = Divide(firstOperand, secondOperand);
-                    Console.WriteLine($"The answer is {ans}");
-                }
-                else
-                {
-                    Console.WriteLine("Wrong mathematical operation!!!");
-                }
+
+                Console.WriteLine($"The answer is {ans}");
+            }
+
+            else
+            {
+                Console.WriteLine("This operation is wrong, run the application again");
+                return;
             }
         }
-
     }
+
 }
